@@ -4,11 +4,7 @@
   <meta charset="UTF-8" />
   <title>Monitoring Penyiraman Tanaman</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Custom Tailwind Config (optional) -->
   <script>
     tailwind.config = {
       theme: {
@@ -24,15 +20,11 @@
       }
     }
   </script>
-
-  <!-- Chart.js CDN -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 <body class="min-h-screen bg-slate-900 text-slate-100">
   <div class="min-h-screen flex flex-col">
-
-    <!-- NAVBAR -->
     <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur">
       <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <div class="flex items-center gap-3">
@@ -54,14 +46,9 @@
         </div>
       </div>
     </header>
-
-    <!-- MAIN CONTENT -->
     <main class="flex-1">
       <div class="max-w-6xl mx-auto px-4 py-6 space-y-6">
-
-        <!-- TOP: SUMMARY + PUMP BUTTON -->
         <section class="grid grid-cols-1 gap-4 md:grid-cols-[2fr,1fr]">
-          <!-- Summary Cards -->
           <div class="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 md:p-5 shadow-xl shadow-slate-900/40">
             <div class="flex items-center justify-between mb-4">
               <h2 class="text-base md:text-lg font-semibold">Status Tanaman Saat Ini</h2>
@@ -70,7 +57,6 @@
               </span>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
-              <!-- SUHU -->
               <div
                 class="rounded-2xl bg-gradient-to-br from-emerald-500/15 via-slate-900 to-slate-900 border border-emerald-500/40 p-4 flex flex-col gap-2">
                 <div class="flex items-center justify-between">
@@ -87,8 +73,6 @@
                 </div>
                 <p class="text-xs text-slate-400">Suhu optimal menjaga tanaman tetap sehat.</p>
               </div>
-
-              <!-- KELEMBAPAN TANAH -->
               <div
                 class="rounded-2xl bg-gradient-to-br from-sky-500/15 via-slate-900 to-slate-900 border border-sky-500/40 p-4 flex flex-col gap-2">
                 <div class="flex items-center justify-between">
@@ -105,8 +89,6 @@
                 </div>
                 <p class="text-xs text-slate-400">Pantau seberapa basah tanah pada area tanaman.</p>
               </div>
-
-              <!-- PH TANAH -->
               <div
                 class="rounded-2xl bg-gradient-to-br from-amber-700/25 via-slate-900 to-slate-900 border border-amber-700/50 p-4 flex flex-col gap-2">
                 <div class="flex items-center justify-between">
@@ -124,8 +106,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Pump Control -->
           <div
             class="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 md:p-5 flex flex-col justify-between shadow-xl shadow-slate-900/40">
             <div class="space-y-2">
@@ -134,7 +114,6 @@
                 Tekan tombol di bawah untuk menyalakan pompa. ESP32 akan menerima perintah melalui Supabase.
               </p>
             </div>
-
             <div class="mt-4 flex flex-col gap-3">
               <button id="pump-btn"
                 class="inline-flex items-center justify-center gap-2 rounded-xl bg-primary-500 hover:bg-primary-600 text-white font-semibold text-sm md:text-base py-2.5 transition disabled:opacity-60 disabled:cursor-not-allowed">
@@ -146,8 +125,6 @@
             </div>
           </div>
         </section>
-
-        <!-- HISTORY CHART -->
         <section class="bg-slate-900/60 border border-slate-800 rounded-2xl p-4 md:p-5 shadow-xl shadow-slate-900/40">
           <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-4">
             <div>
@@ -156,8 +133,6 @@
                 Lihat perubahan suhu, kelembapan, dan pH berdasarkan rentang waktu tertentu.
               </p>
             </div>
-
-            <!-- Filter Controls -->
             <div class="flex flex-wrap items-center gap-2 md:justify-end">
               <div class="inline-flex rounded-full bg-slate-800/80 p-1 text-xs">
                 <button data-range="week"
@@ -173,12 +148,10 @@
                   Tanggal tertentu
                 </button>
               </div>
-
               <input type="date" id="date-picker"
                 class="hidden px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700 text-xs text-slate-200 outline-none focus:ring-2 focus:ring-primary-500" />
             </div>
           </div>
-
           <div class="bg-slate-950/60 border border-slate-800 rounded-2xl p-3 md:p-4">
             <canvas id="historyChart" class="w-full h-64"></canvas>
           </div>
@@ -190,11 +163,9 @@
 
       </div>
     </main>
-
-    <!-- FOOTER -->
     <footer class="border-t border-slate-800">
       <div class="max-w-6xl mx-auto px-4 py-3 text-xs text-slate-500 flex items-center justify-between">
-        <span>© <span id="year"></span> Smart Irrigation System</span>
+        <span>© <span id="year"></span> Smart Irrigation System By Zhafran</span>
         <span class="hidden md:inline">
           ESP32 • Supabase • Tailwind • Chart.js
         </span>
@@ -202,8 +173,6 @@
     </footer>
 
   </div>
-
-  <!-- App JS -->
   <script type="module" src="./js/app.js"></script>
 </body>
 </html>
