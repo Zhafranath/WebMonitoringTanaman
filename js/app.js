@@ -3,8 +3,8 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 
 // ======================= KONFIGURASI SUPABASE =======================
 // GANTI SESUAI PROJECTMU
-const SUPABASE_URL = 'https://YOUR-PROJECT-ID.supabase.co';
-const SUPABASE_ANON_KEY = 'YOUR_ANON_KEY';
+const SUPABASE_URL = 'LINK SUPABASE';
+const SUPABASE_ANON_KEY = 'LINK ANON SUPABASE';
 
 // Nama tabel Supabase untuk menyimpan log sensor
 // Kolom yang diasumsikan: created_at (timestamp), temperature, soil_moisture, soil_ph
